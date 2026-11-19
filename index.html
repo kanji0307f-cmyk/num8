@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма обратной связи</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="my.js" defer></script>
+</head>
+<body>
+
+    <main class="page">
+        <h1>Свяжитесь с нами</h1>
+        <p>Нажмите на кнопку, чтобы оставить сообщение.</p>
+        <button type="button" id="openForm" class="open-button">
+            Открыть форму
+        </button>
+    </main>
+
+    <div class="popup" id="popup" aria-hidden="true">
+        <section class="form-window" role="dialog" aria-modal="true"
+                 aria-labelledby="formTitle">
+            <button type="button" class="close-button" id="closeForm"
+                    aria-label="Закрыть форму">&times;</button>
+
+            <h2 id="formTitle">Форма обратной связи</h2>
+
+            <form id="contactForm">
+                <div class="fields">
+                    <label>
+                        ФИО
+                        <input type="text" name="ФИО" autocomplete="name"
+                               placeholder="Иванов Иван Иванович" required>
+                    </label>
+
+                    <label>
+                        Email
+                        <input type="email" name="slap_replyto" autocomplete="email"
+                               placeholder="example@mail.com" required>
+                    </label>
+
+                    <label>
+                        Телефон
+                        <input type="tel" name="Телефон" autocomplete="tel"
+                               placeholder="+7 900 000-00-00" required>
+                    </label>
+
+                    <label>
+                        Организация
+                        <input type="text" name="Организация"
+                               autocomplete="organization"
+                               placeholder="Название организации">
+                    </label>
+
+                    <label class="message-field">
+                        Сообщение
+                        <textarea name="Сообщение" rows="3"
+                                  placeholder="Введите сообщение"
+                                  required></textarea>
+                    </label>
+                </div>
+
+                <label class="agreement">
+                    <input type="checkbox" name="Согласие" value="Да" required>
+                    <span>
+                        Я согласен(на) на обработку персональных данных
+                        в соответствии с политикой конфиденциальности.
+                    </span>
+                </label>
+
+                <button type="submit" id="submitButton" class="submit-button">
+                    Отправить
+                </button>
+
+                <p id="formMessage" class="form-message" role="status"
+                   aria-live="polite"></p>
+            </form>
+        </section>
+    </div>
+
+</body>
+</html>
